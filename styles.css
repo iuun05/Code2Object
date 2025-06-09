@@ -522,15 +522,12 @@ nav {
 
 .testimonial-author {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.testimonial-author img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover;
+.testimonial-author div {
+    text-align: center;
 }
 
 .testimonial-author h4 {
@@ -649,53 +646,51 @@ nav {
 footer {
     background: linear-gradient(to right, #1a1a1a, #2c2c2c);
     color: var(--white);
-    padding: 25px 5% 15px; /* 减少上下内边距 */
+    padding: 20px 5% 10px; /* 减少上下内边距 */
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center; /* 居中显示 */
 }
 
 .footer-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px; /* 减少列间距 */
-    margin-bottom: 15px; /* 减少底部边距 */
-    justify-content: space-between;
+    justify-content: center; /* 居中显示 */
+    margin-bottom: 15px; /* 底部边距 */
 }
 
-.footer-logo h2 {
-    margin-bottom: 5px; /* 减少标题下方间距 */
-    font-size: 1.8rem; /* 稍微减小标题大小 */
-}
-
-.footer-logo p {
-    font-size: 0.9rem; /* 减小描述文字大小 */
-}
-
-.footer-column h3 {
-    margin-bottom: 10px; /* 减少标题下方间距 */
-    font-size: 1.1rem; /* 减小标题大小 */
-}
-
-.footer-column ul {
-    padding-left: 0;
-    list-style: none;
-}
-
-.footer-column li {
-    margin-bottom: 5px; /* 减少列表项间距 */
-}
-
-.footer-column a {
-    color: #ccc;
+/* GitHub链接样式 */
+.github-link a {
+    display: inline-flex;
+    align-items: center;
+    color: #fff;
     text-decoration: none;
-    font-size: 0.9rem; /* 减小链接文字大小 */
-    transition: var(--transition);
+    font-size: 1.1rem;
+    background-color: #333;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.github-link a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.github-link a i.fa-github {
+    margin-right: 8px;
+    font-size: 1.3rem;
+}
+
+.github-link a:hover i.fa-github {
+    transform: rotate(360deg);
+    transition: transform 0.8s ease;
 }
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 15px; /* 减少顶部内边距 */
+    padding-top: 10px;
     text-align: center;
-    font-size: 0.85rem; /* 减小版权文字大小 */
+    font-size: 0.85rem;
 }
 
 /* 响应式设计 */
@@ -750,5 +745,67 @@ footer {
     .footer-content {
         flex-direction: column;
         gap: 20px;
+    }
+}
+
+/* 思考和感悟部分 */
+.reflection {
+    background-color: var(--white);
+    padding: 60px 0;
+}
+
+.reflection-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.reflection-item {
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 25px 30px;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.reflection-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.reflection-item h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.reflection-item h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 25px;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+}
+
+.reflection-item p {
+    line-height: 1.8;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    .reflection-item h3 {
+        font-size: 1.3rem;
+    }
+    
+    .reflection-item {
+        padding: 20px;
     }
 }
